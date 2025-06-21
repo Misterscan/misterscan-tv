@@ -1,0 +1,225 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2821
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red183\green111\blue247;\red23\green24\blue24;\red202\green202\blue202;
+\red54\green192\blue160;\red212\green212\blue212;\red113\green192\blue131;\red109\green115\blue120;\red246\green124\blue48;
+\red238\green46\blue56;}
+{\*\expandedcolortbl;;\cssrgb\c77255\c54118\c97647;\cssrgb\c11765\c12157\c12549;\cssrgb\c83137\c83137\c83137;
+\cssrgb\c23922\c78824\c69020;\cssrgb\c86275\c86275\c86275;\cssrgb\c50588\c78824\c58431;\cssrgb\c50196\c52549\c54510;\cssrgb\c98039\c56471\c24314;
+\cssrgb\c95686\c27843\c27843;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 import\cf4 \strokec4  \cf5 \strokec5 React\cf6 \strokec6 ,\cf4 \strokec4  \cf6 \strokec6 \{\cf4 \strokec4  useState\cf6 \strokec6 ,\cf4 \strokec4  useEffect \cf6 \strokec6 \}\cf4 \strokec4  \cf2 \strokec2 from\cf4 \strokec4  \cf7 \strokec7 'react'\cf6 \strokec6 ;\cf4 \cb1 \strokec4 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8 // ICONS (using inline SVGs for self-containment)\cf4 \cb1 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \strokec2 const\cf4 \strokec4  \cf5 \strokec5 PlayIcon\cf4 \strokec4  \cf6 \strokec6 =\cf4 \strokec4  \cf6 \strokec6 ()\cf4 \strokec4  \cf6 \strokec6 =>\cf4 \strokec4  \cf6 \strokec6 (\cf4 \cb1 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3   \cf6 \strokec6 <\cf4 \strokec4 svg viewBox\cf6 \strokec6 =\cf7 \strokec7 "0 0 20 20"\cf4 \strokec4  fill\cf6 \strokec6 =\cf7 \strokec7 "currentColor"\cf4 \strokec4  className\cf6 \strokec6 =\cf7 \strokec7 "w-5 h-5 mr-2"\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 <\cf4 \strokec4 path fillRule\cf6 \strokec6 =\cf7 \strokec7 "evenodd"\cf4 \strokec4  d\cf6 \strokec6 =\cf7 \strokec7 "M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8.118v3.764a1 1 0 001.555.832l3.197-1.882a1 1 0 000-1.664l-3.197-1.882z"\cf4 \strokec4  clipRule\cf6 \strokec6 =\cf7 \strokec7 "evenodd"\cf4 \strokec4  />\cb1 \
+\cb3   \cf6 \strokec6 </\cf4 \strokec4 svg\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb3 \strokec6 );\cf4 \cb1 \strokec4 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \strokec2 const\cf4 \strokec4  \cf5 \strokec5 BandcampIcon\cf4 \strokec4  \cf6 \strokec6 =\cf4 \strokec4  \cf6 \strokec6 ()\cf4 \strokec4  \cf6 \strokec6 =>\cf4 \strokec4  \cf6 \strokec6 (\cf4 \cb1 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3   \cf6 \strokec6 <\cf4 \strokec4 svg viewBox\cf6 \strokec6 =\cf7 \strokec7 "0 0 24 24"\cf4 \strokec4  fill\cf6 \strokec6 =\cf7 \strokec7 "currentColor"\cf4 \strokec4  className\cf6 \strokec6 =\cf7 \strokec7 "w-6 h-6 mr-2"\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 <\cf4 \strokec4 path d\cf6 \strokec6 =\cf7 \strokec7 "M0 18.75l7.437-13.5H24l-7.438 13.5H0z"\cf4 \strokec4  />\cb1 \
+\cb3   \cf6 \strokec6 </\cf4 \strokec4 svg\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb3 \strokec6 );\cf4 \cb1 \strokec4 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \strokec2 const\cf4 \strokec4  \cf5 \strokec5 SpotifyIcon\cf4 \strokec4  \cf6 \strokec6 =\cf4 \strokec4  \cf6 \strokec6 ()\cf4 \strokec4  \cf6 \strokec6 =>\cf4 \strokec4  \cf6 \strokec6 (\cf4 \cb1 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3     \cf6 \strokec6 <\cf4 \strokec4 svg viewBox\cf6 \strokec6 =\cf7 \strokec7 "0 0 24 24"\cf4 \strokec4  fill\cf6 \strokec6 =\cf7 \strokec7 "currentColor"\cf4 \strokec4  className\cf6 \strokec6 =\cf7 \strokec7 "w-6 h-6 mr-2"\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3         \cf6 \strokec6 <\cf4 \strokec4 path d\cf6 \strokec6 =\cf7 \strokec7 "M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm4.173 14.226c-.23.358-.68.468-1.038.24-.358-.23-.468-.68-.24-1.038C16.92 12.9 15.12 11.9 12.72 10.74c-2.4-.96-3.24-1.5-3.24-2.58 0-.96.72-1.68 1.92-1.68 1.2 0 1.8.6 1.92 1.8h2.16c-.12-2.28-1.68-3.6-4.08-3.6-2.4 0-4.2 1.44-4.2 3.48 0 2.16 1.56 3.12 3.84 4.08 2.28.96 3.12 1.56 3.12 2.64 0 1.08-.72 1.8-2.04 1.8-1.32 0-2.16-.6-2.4-1.92H7.893c.24 2.52 1.92 3.72 4.32 3.72 2.4 0 4.32-1.32 4.32-3.6 0-1.92-1.32-2.88-3.6-3.84z"\cf4 \strokec4 />\cb1 \
+\cb3     \cf6 \strokec6 </\cf4 \strokec4 svg\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb3 \strokec6 );\cf4 \cb1 \strokec4 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \strokec2 const\cf4 \strokec4  \cf5 \strokec5 AppleMusicIcon\cf4 \strokec4  \cf6 \strokec6 =\cf4 \strokec4  \cf6 \strokec6 ()\cf4 \strokec4  \cf6 \strokec6 =>\cf4 \strokec4  \cf6 \strokec6 (\cf4 \cb1 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3     \cf6 \strokec6 <\cf4 \strokec4 svg viewBox\cf6 \strokec6 =\cf7 \strokec7 "0 0 24 24"\cf4 \strokec4  fill\cf6 \strokec6 =\cf7 \strokec7 "currentColor"\cf4 \strokec4  className\cf6 \strokec6 =\cf7 \strokec7 "w-6 h-6 mr-2"\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3         \cf6 \strokec6 <\cf4 \strokec4 path d\cf6 \strokec6 =\cf7 \strokec7 "M12.115 6.438c-.01.002-.02.003-.03.005-.783.42-1.48 1.08-2.053 1.924-.523.77-1.127 1.93-1.127 3.208 0 2.23 1.21 3.327 2.446 3.327.42 0 .764-.17 1.28-.51.46-.303.77-.615.936-.887.18-.3.303-.6.303-.6s-.047 1.635-.047 3.327c0 .17.006.33.02.48.016.17.037.33.067.48.22.844.755 1.534 1.5 1.964.08.04.16.08.24.11.75.45 1.6.6 2.45.6 1.11 0 2.12-.51 2.87-1.4.79-.95 1.19-2.21 1.19-3.56 0-2.61-1.96-3.95-3.9-3.95-.91 0-1.76.28-2.47.76-.04.03-.09.06-.13.09-.59.45-1.04.76-1.04 1.59 0 .6.31 1.06.87 1.41.6.38 1.33.56 2.1.56.98 0 1.82-.47 2.4-1.25.04-.05.08-.1.12-.15.11-.15.2-.32.26-.5.09-.28.12-.59.12-.91v-3.7c0-2.14-1.43-3.3-3.41-3.3a3.14 3.14 0 00-2.85 1.65zm-1.11-1.748C10.16 3.65 9.17 3.1 8.01 3.1c-1.3 0-2.48.59-3.33 1.76-.84 1.16-1.25 2.68-1.25 4.35 0 3.01 1.9 4.61 4.3 4.61 1.17 0 2.16-.52 2.91-1.52.7-.91 1.16-2.18 1.16-3.64 0-1.6-.45-2.86-1.19-3.81z"\cf4 \strokec4 />\cb1 \
+\cb3     \cf6 \strokec6 </\cf4 \strokec4 svg\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb3 \strokec6 );\cf4 \cb1 \strokec4 \
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \strokec2 const\cf4 \strokec4  \cf5 \strokec5 TikTokIcon\cf4 \strokec4  \cf6 \strokec6 =\cf4 \strokec4  \cf6 \strokec6 ()\cf4 \strokec4  \cf6 \strokec6 =>\cf4 \strokec4  \cf6 \strokec6 (\cf4 \cb1 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3     \cf6 \strokec6 <\cf4 \strokec4 svg fill\cf6 \strokec6 =\cf7 \strokec7 "currentColor"\cf4 \strokec4  viewBox\cf6 \strokec6 =\cf7 \strokec7 "0 0 16 16"\cf4 \strokec4  className\cf6 \strokec6 =\cf7 \strokec7 "w-8 h-8"\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3         \cf6 \strokec6 <\cf4 \strokec4 path d\cf6 \strokec6 =\cf7 \strokec7 "M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2.19c-.863.11-1.684.417-2.408.822-.724.405-1.28 1.01-1.743 1.765-.353.53-.61 1.148-.79 1.813H11v2.19c-.218.623-.58 1.29-1.064 1.985-.484.695-1.113 1.29-1.907 1.734-.794.444-1.734.683-2.77.72v-2.19c.863-.11 1.684-.417 2.408-.822.724-.405 1.28-1.01 1.743-1.765.353-.53.61 1.148-.79-1.813H9V9H7v2.19c-.218.623-.58 1.29-1.064 1.985-.484.695-1.113 1.29-1.907 1.734-.794.444-1.734.683-2.77.72v-2.19c.863-.11 1.684-.417 2.408-.822.724-.405 1.28-1.01 1.743-1.765.353-.53.61-1.148.79-1.813H7V0h2Z"\cf4 \strokec4 />\cb1 \
+\cb3     \cf6 \strokec6 </\cf4 \strokec4 svg\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb3 \strokec6 );\cf4 \cb1 \strokec4 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \strokec2 const\cf4 \strokec4  \cf5 \strokec5 YouTubeIcon\cf4 \strokec4  \cf6 \strokec6 =\cf4 \strokec4  \cf6 \strokec6 ()\cf4 \strokec4  \cf6 \strokec6 =>\cf4 \strokec4  \cf6 \strokec6 (\cf4 \cb1 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3     \cf6 \strokec6 <\cf4 \strokec4 svg fill\cf6 \strokec6 =\cf7 \strokec7 "currentColor"\cf4 \strokec4  viewBox\cf6 \strokec6 =\cf7 \strokec7 "0 0 16 16"\cf4 \strokec4  className\cf6 \strokec6 =\cf7 \strokec7 "w-10 h-10"\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3       \cf6 \strokec6 <\cf4 \strokec4 path d\cf6 \strokec6 =\cf7 \strokec7 "M8.051 1.999a.75.75 0 0 1 .548.198l3.54 3.54a.75.75 0 0 1 0 1.06l-3.54 3.54a.75.75 0 1 1-1.06-1.06l2.72-2.72H3.5a.75.75 0 0 1 0-1.5h6.762L7.54 4.779a.75.75 0 0 1 .512-1.28Z"\cf4 \strokec4 />\cb1 \
+\cb3     \cf6 \strokec6 </\cf4 \strokec4 svg\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb3 \strokec6 );\cf4 \cb1 \strokec4 \
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \strokec2 const\cf4 \strokec4  \cf5 \strokec5 DiscordIcon\cf4 \strokec4  \cf6 \strokec6 =\cf4 \strokec4  \cf6 \strokec6 ()\cf4 \strokec4  \cf6 \strokec6 =>\cf4 \strokec4  \cf6 \strokec6 (\cf4 \cb1 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3     \cf6 \strokec6 <\cf4 \strokec4 svg fill\cf6 \strokec6 =\cf7 \strokec7 "currentColor"\cf4 \strokec4  viewBox\cf6 \strokec6 =\cf7 \strokec7 "0 0 16 16"\cf4 \strokec4  className\cf6 \strokec6 =\cf7 \strokec7 "w-6 h-6 mr-3"\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3         \cf6 \strokec6 <\cf4 \strokec4 path d\cf6 \strokec6 =\cf7 \strokec7 "M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.12.325-2.226.714-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.048-.027c-.508-.192-1-.432-1.438-.717a.053.053 0 0 1 .002-.085c.118-.08.237-.162.355-.246a.05.05 0 0 1 .047-.002c2.44-.986 4.354-.986 6.793 0a.05.05 0 0 1 .047.002c.118.084.237.166.355.246a.053.053 0 0 1 .002.085c-.438.285-.93.525-1.438.717a.051.051 0 0 0-.048.027.05.05 0 0 0-.01.059c.236.466.508.909.818 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-8.885a.042.042 0 0 0-.021-.018Zm-5.485 6.877a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-4.5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"\cf4 \strokec4 />\cb1 \
+\cb3     \cf6 \strokec6 </\cf4 \strokec4 svg\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb3 \strokec6 );\cf4 \cb1 \strokec4 \
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8 // Main App Component\cf4 \cb1 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \strokec2 export\cf4 \strokec4  \cf2 \strokec2 default\cf4 \strokec4  \cf2 \strokec2 function\cf4 \strokec4  \cf5 \strokec5 App\cf6 \strokec6 ()\cf4 \strokec4  \cf6 \strokec6 \{\cf4 \cb1 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3   \cf8 \strokec8 // State to manage a subtle background animation effect\cf4 \cb1 \strokec4 \
+\cb3   \cf2 \strokec2 const\cf4 \strokec4  \cf6 \strokec6 [\cf4 \strokec4 gradientPosition\cf6 \strokec6 ,\cf4 \strokec4  setGradientPosition\cf6 \strokec6 ]\cf4 \strokec4  \cf6 \strokec6 =\cf4 \strokec4  useState\cf6 \strokec6 (\{\cf4 \strokec4  x\cf6 \strokec6 :\cf4 \strokec4  \cf9 \strokec9 50\cf6 \strokec6 ,\cf4 \strokec4  y\cf6 \strokec6 :\cf4 \strokec4  \cf9 \strokec9 50\cf4 \strokec4  \cf6 \strokec6 \});\cf4 \cb1 \strokec4 \
+\
+\cb3   useEffect\cf6 \strokec6 (()\cf4 \strokec4  \cf6 \strokec6 =>\cf4 \strokec4  \cf6 \strokec6 \{\cf4 \cb1 \strokec4 \
+\cb3     \cf8 \strokec8 // This effect creates a slow, wandering spotlight effect on the background.\cf4 \cb1 \strokec4 \
+\cb3     \cf2 \strokec2 const\cf4 \strokec4  handleMouseMove \cf6 \strokec6 =\cf4 \strokec4  \cf6 \strokec6 (\cf4 \strokec4 event\cf6 \strokec6 )\cf4 \strokec4  \cf6 \strokec6 =>\cf4 \strokec4  \cf6 \strokec6 \{\cf4 \cb1 \strokec4 \
+\cb3       \cf2 \strokec2 const\cf4 \strokec4  \cf6 \strokec6 \{\cf4 \strokec4  clientX\cf6 \strokec6 ,\cf4 \strokec4  clientY \cf6 \strokec6 \}\cf4 \strokec4  \cf6 \strokec6 =\cf4 \strokec4  event\cf6 \strokec6 ;\cf4 \cb1 \strokec4 \
+\cb3       \cf2 \strokec2 const\cf4 \strokec4  \cf6 \strokec6 \{\cf4 \strokec4  innerWidth\cf6 \strokec6 ,\cf4 \strokec4  innerHeight \cf6 \strokec6 \}\cf4 \strokec4  \cf6 \strokec6 =\cf4 \strokec4  window\cf6 \strokec6 ;\cf4 \cb1 \strokec4 \
+\cb3       \cf2 \strokec2 const\cf4 \strokec4  x \cf6 \strokec6 =\cf4 \strokec4  \cf6 \strokec6 (\cf4 \strokec4 clientX \cf6 \strokec6 /\cf4 \strokec4  innerWidth\cf6 \strokec6 )\cf4 \strokec4  \cf6 \strokec6 *\cf4 \strokec4  \cf9 \strokec9 100\cf6 \strokec6 ;\cf4 \cb1 \strokec4 \
+\cb3       \cf2 \strokec2 const\cf4 \strokec4  y \cf6 \strokec6 =\cf4 \strokec4  \cf6 \strokec6 (\cf4 \strokec4 clientY \cf6 \strokec6 /\cf4 \strokec4  innerHeight\cf6 \strokec6 )\cf4 \strokec4  \cf6 \strokec6 *\cf4 \strokec4  \cf9 \strokec9 100\cf6 \strokec6 ;\cf4 \cb1 \strokec4 \
+\cb3       setGradientPosition\cf6 \strokec6 (\{\cf4 \strokec4  x\cf6 \strokec6 ,\cf4 \strokec4  y \cf6 \strokec6 \});\cf4 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 \};\cf4 \cb1 \strokec4 \
+\
+\cb3     window\cf6 \strokec6 .\cf4 \strokec4 addEventListener\cf6 \strokec6 (\cf7 \strokec7 'mousemove'\cf6 \strokec6 ,\cf4 \strokec4  handleMouseMove\cf6 \strokec6 );\cf4 \cb1 \strokec4 \
+\
+\cb3     \cf2 \strokec2 return\cf4 \strokec4  \cf6 \strokec6 ()\cf4 \strokec4  \cf6 \strokec6 =>\cf4 \strokec4  \cf6 \strokec6 \{\cf4 \cb1 \strokec4 \
+\cb3       window\cf6 \strokec6 .\cf4 \strokec4 removeEventListener\cf6 \strokec6 (\cf7 \strokec7 'mousemove'\cf6 \strokec6 ,\cf4 \strokec4  handleMouseMove\cf6 \strokec6 );\cf4 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 \};\cf4 \cb1 \strokec4 \
+\cb3   \cf6 \strokec6 \},\cf4 \strokec4  \cf6 \strokec6 []);\cf4 \cb1 \strokec4 \
+\cb3   \cb1 \
+\cb3   \cf8 \strokec8 // Background style uses a radial gradient that follows the mouse\cf4 \cb1 \strokec4 \
+\cb3   \cf2 \strokec2 const\cf4 \strokec4  backgroundStyle \cf6 \strokec6 =\cf4 \strokec4  \cf6 \strokec6 \{\cf4 \cb1 \strokec4 \
+\cb3     background\cf6 \strokec6 :\cf4 \strokec4  \cf7 \strokec7 `radial-gradient(circle at \cf6 \strokec6 $\{\cf4 \strokec4 gradientPosition\cf6 \strokec6 .\cf4 \strokec4 x\cf6 \strokec6 \}\cf7 \strokec7 % \cf6 \strokec6 $\{\cf4 \strokec4 gradientPosition\cf6 \strokec6 .\cf4 \strokec4 y\cf6 \strokec6 \}\cf7 \strokec7 %, #002d5d, #001021 40%)`\cf4 \cb1 \strokec4 \
+\cb3   \cf6 \strokec6 \};\cf4 \cb1 \strokec4 \
+\cb3   \cb1 \
+\cb3   \cf8 \strokec8 // Updated data for merchandise with link to main store\cf4 \cb1 \strokec4 \
+\cb3   \cf2 \strokec2 const\cf4 \strokec4  merchItems \cf6 \strokec6 =\cf4 \strokec4  \cf6 \strokec6 [\cf4 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 \{\cf4 \strokec4  name\cf6 \strokec6 :\cf4 \strokec4  \cf7 \strokec7 'Misterscan Classic Tee'\cf6 \strokec6 ,\cf4 \strokec4  image\cf6 \strokec6 :\cf4 \strokec4  \cf7 \strokec7 'https://placehold.co/400x400/0077b6/ffffff?text=Misterscan+Tee&font=sans-serif'\cf6 \strokec6 ,\cf4 \strokec4  url\cf6 \strokec6 :\cf4 \strokec4  \cf7 \strokec7 'https://misterscan.printify.me/'\cf4 \strokec4  \cf6 \strokec6 \},\cf4 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 \{\cf4 \strokec4  name\cf6 \strokec6 :\cf4 \strokec4  \cf7 \strokec7 'Aero-Fi Hoodie'\cf6 \strokec6 ,\cf4 \strokec4  image\cf6 \strokec6 :\cf4 \strokec4  \cf7 \strokec7 'https://placehold.co/400x400/00b4d8/ffffff?text=Aero-Fi+Hoodie&font=sans-serif'\cf6 \strokec6 ,\cf4 \strokec4  url\cf6 \strokec6 :\cf4 \strokec4  \cf7 \strokec7 'https://misterscan.printify.me/'\cf4 \strokec4  \cf6 \strokec6 \},\cf4 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 \{\cf4 \strokec4  name\cf6 \strokec6 :\cf4 \strokec4  \cf7 \strokec7 'Network Trucker Cap'\cf6 \strokec6 ,\cf4 \strokec4  image\cf6 \strokec6 :\cf4 \strokec4  \cf7 \strokec7 'https://placehold.co/400x400/90e0ef/000000?text=Network+Cap&font=sans-serif'\cf6 \strokec6 ,\cf4 \strokec4  url\cf6 \strokec6 :\cf4 \strokec4  \cf7 \strokec7 'https://misterscan.printify.me/'\cf4 \strokec4  \cf6 \strokec6 \},\cf4 \cb1 \strokec4 \
+\cb3   \cf6 \strokec6 ];\cf4 \cb1 \strokec4 \
+\
+\cb3   \cf2 \strokec2 return\cf4 \strokec4  \cf6 \strokec6 (\cf4 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 <\cf4 \strokec4 div \cb1 \
+\cb3         className\cf6 \strokec6 =\cf7 \strokec7 "min-h-screen w-full font-sans text-white transition-all duration-1000 ease-out"\cf4 \cb1 \strokec4 \
+\cb3         style\cf6 \strokec6 =\{\cf4 \strokec4 backgroundStyle\cf6 \strokec6 \}\cf4 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3       \cf6 \strokec6 <\cf4 \strokec4 div className\cf6 \strokec6 =\cf7 \strokec7 "min-h-screen w-full bg-black bg-opacity-20 backdrop-blur-sm p-4 sm:p-8 flex flex-col items-center"\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3         \cf6 \strokec6 <\cf4 \strokec4 main className\cf6 \strokec6 =\cf7 \strokec7 "w-full max-w-5xl mx-auto flex flex-col items-center gap-12 sm:gap-16"\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3           \cb1 \
+\cb3           \cf6 \strokec6 \{\cf8 \strokec8 /* Header/Welcome Banner Section */\cf6 \strokec6 \}\cf4 \cb1 \strokec4 \
+\cb3           \cf6 \strokec6 <\cf4 \strokec4 header className\cf6 \strokec6 =\cf7 \strokec7 "text-center w-full mt-8 sm:mt-12"\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3             \cf6 \strokec6 \{\cf8 \strokec8 /* The new official logo */\cf6 \strokec6 \}\cf4 \cb1 \strokec4 \
+\cb3             \cf6 \strokec6 <\cf4 \strokec4 img \cb1 \
+\cb3                 src\cf6 \strokec6 =\cf7 \strokec7 "https://i.imgur.com/g8gZc5B.png"\cf4 \strokec4  \cf8 \strokec8 // Using an Imgur link for the new logo\cf4 \cb1 \strokec4 \
+\cb3                 alt\cf6 \strokec6 =\cf7 \strokec7 "Misterscan Logo"\cf4 \strokec4  \cb1 \
+\cb3                 className\cf6 \strokec6 =\cf7 \strokec7 "h-20 sm:h-24 mx-auto mb-4 rounded-lg shadow-lg"\cf4 \strokec4  \cb1 \
+\cb3                 onError\cf6 \strokec6 =\{(\cf4 \strokec4 e\cf6 \strokec6 )\cf4 \strokec4  \cf6 \strokec6 =>\cf4 \strokec4  \cf6 \strokec6 \{\cf4 \strokec4  e\cf6 \strokec6 .\cf4 \strokec4 target\cf6 \strokec6 .\cf4 \strokec4 onerror \cf6 \strokec6 =\cf4 \strokec4  \cf2 \strokec2 null\cf6 \strokec6 ;\cf4 \strokec4  e\cf6 \strokec6 .\cf4 \strokec4 target\cf6 \strokec6 .\cf4 \strokec4 src\cf6 \strokec6 =\cf7 \strokec7 'https://placehold.co/200x80/001021/ffffff?text=Misterscan'\cf6 \strokec6 ;\cf4 \strokec4  \cf6 \strokec6 \}\}\cf4 \cb1 \strokec4 \
+\cb3             />\cb1 \
+\cb3             \cf6 \strokec6 <\cf4 \strokec4 h1 className\cf6 \strokec6 =\cf7 \strokec7 "text-xl sm:text-2xl font-semibold text-cyan-200 tracking-wider"\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3               \cf5 \strokec5 Welcome\cf4 \strokec4  to the \cf5 \strokec5 Misterscan\cf4 \strokec4  \cf5 \strokec5 Network\cf4 \cb1 \strokec4 \
+\cb3             \cf6 \strokec6 </\cf4 \strokec4 h1\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3             \cf6 \strokec6 <\cf4 \strokec4 p className\cf6 \strokec6 =\cf7 \strokec7 "text-md sm:text-lg text-cyan-100/80 mt-1"\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3               \cf5 \strokec5 Your\cf4 \strokec4  alternate reality \cf2 \strokec2 of\cf4 \strokec4  calm\cf6 \strokec6 .\cf4 \cb1 \strokec4 \
+\cb3             \cf6 \strokec6 </\cf4 \strokec4 p\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3           \cf6 \strokec6 </\cf4 \strokec4 header\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\
+\cb3           \cf6 \strokec6 \{\cf8 \strokec8 /* Music & Albums Section */\cf6 \strokec6 \}\cf4 \cb1 \strokec4 \
+\cb3           \cf6 \strokec6 <\cf4 \strokec4 section id\cf6 \strokec6 =\cf7 \strokec7 "music"\cf4 \strokec4  className\cf6 \strokec6 =\cf7 \strokec7 "w-full p-6 bg-slate-900/40 rounded-2xl border border-cyan-400/20 shadow-2xl backdrop-blur-md"\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3             \cf6 \strokec6 <\cf4 \strokec4 h2 className\cf6 \strokec6 =\cf7 \strokec7 "text-2xl sm:text-3xl font-bold text-center mb-6 text-cyan-300 tracking-wide"\cf6 \strokec6 >\cf5 \strokec5 The\cf4 \strokec4  \cf5 \strokec5 Broadcast\cf6 \strokec6 </\cf4 \strokec4 h2\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3             \cb1 \
+\cb3             \cf6 \strokec6 \{\cf8 \strokec8 /* Live Bandcamp Player Embedded */\cf6 \strokec6 \}\cf4 \cb1 \strokec4 \
+\cb3             \cf6 \strokec6 <\cf4 \strokec4 div className\cf6 \strokec6 =\cf7 \strokec7 "mb-6 rounded-lg overflow-hidden border-2 border-cyan-400/10 shadow-inner"\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3                 \cf6 \strokec6 <\cf4 \strokec4 iframe \cb1 \
+\cb3                     style\cf6 \strokec6 =\{\{\cf4 \strokec4  border\cf6 \strokec6 :\cf4 \strokec4  \cf9 \strokec9 0\cf6 \strokec6 ,\cf4 \strokec4  width\cf6 \strokec6 :\cf4 \strokec4  \cf7 \strokec7 '100%'\cf6 \strokec6 ,\cf4 \strokec4  height\cf6 \strokec6 :\cf4 \strokec4  \cf7 \strokec7 '350px'\cf4 \strokec4  \cf6 \strokec6 \}\}\cf4 \strokec4  \cb1 \
+\cb3                     src\cf6 \strokec6 =\cf7 \strokec7 "https://bandcamp.com/EmbeddedPlayer/album=209514318/size=large/bgcol=001021/linkcol=0687f5/minimal=true/transparent=true/"\cf4 \strokec4  \cb1 \
+\cb3                     seamless\cb1 \
+\cb3                     title\cf6 \strokec6 =\cf7 \strokec7 "Misterscan Bandcamp Player"\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3                         \cf6 \strokec6 <\cf4 \strokec4 a href\cf6 \strokec6 =\cf7 \strokec7 "https://mrunusual.bandcamp.com/album/misterscan"\cf6 \strokec6 >\cf5 \strokec5 Misterscan\cf4 \strokec4  by \cf5 \strokec5 Mr\cf6 \strokec6 .\cf4 \strokec4  \cf5 \strokec5 Unusual\cf6 \strokec6 </\cf4 \strokec4 a\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3                 \cf6 \strokec6 </\cf4 \strokec4 iframe\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3             \cf6 \strokec6 </\cf4 \strokec4 div\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\
+\cb3             \cf6 \strokec6 \{\cf8 \strokec8 /* Links to music platforms with updated URLs */\cf6 \strokec6 \}\cf4 \cb1 \strokec4 \
+\cb3             \cf6 \strokec6 <\cf4 \strokec4 div className\cf6 \strokec6 =\cf7 \strokec7 "grid grid-cols-1 sm:grid-cols-3 gap-4"\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3               \cf6 \strokec6 <\cf4 \strokec4 a href\cf6 \strokec6 =\cf7 \strokec7 "https://mrunusual.bandcamp.com/album/misterscan"\cf4 \strokec4  target\cf6 \strokec6 =\cf7 \strokec7 "_blank"\cf4 \strokec4  rel\cf6 \strokec6 =\cf7 \strokec7 "noopener noreferrer"\cf4 \strokec4  className\cf6 \strokec6 =\cf7 \strokec7 "flex items-center justify-center p-4 bg-cyan-600/80 rounded-lg text-white font-bold text-lg hover:bg-cyan-500 transition-all duration-300 ease-in-out shadow-lg hover:shadow-cyan-400/30 transform hover:-translate-y-1"\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3                 \cf6 \strokec6 <\cf5 \strokec5 BandcampIcon\cf4 \strokec4  />\cb1 \
+\cb3                 \cf5 \strokec5 Get\cf4 \strokec4  \cf5 \strokec5 Full\cf4 \strokec4  \cf5 \strokec5 Experience\cf4 \cb1 \strokec4 \
+\cb3               \cf6 \strokec6 </\cf4 \strokec4 a\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3               \cf6 \strokec6 <\cf4 \strokec4 a href\cf6 \strokec6 =\cf7 \strokec7 "https://open.spotify.com/album/6LJo78cCxgeIFxPuspyics"\cf4 \strokec4  target\cf6 \strokec6 =\cf7 \strokec7 "_blank"\cf4 \strokec4  rel\cf6 \strokec6 =\cf7 \strokec7 "noopener noreferrer"\cf4 \strokec4  className\cf6 \strokec6 =\cf7 \strokec7 "flex items-center justify-center p-4 bg-green-600/80 rounded-lg text-white font-bold text-lg hover:bg-green-500 transition-all duration-300 ease-in-out shadow-lg hover:shadow-green-400/30 transform hover:-translate-y-1"\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3                 \cf6 \strokec6 <\cf5 \strokec5 SpotifyIcon\cf4 \strokec4  />\cb1 \
+\cb3                 \cf5 \strokec5 Listen\cf4 \strokec4  on \cf5 \strokec5 Spotify\cf4 \cb1 \strokec4 \
+\cb3               \cf6 \strokec6 </\cf4 \strokec4 a\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3               \cf6 \strokec6 <\cf4 \strokec4 a href\cf6 \strokec6 =\cf7 \strokec7 "https://music.apple.com/us/album/misterscan/1816046579"\cf4 \strokec4  target\cf6 \strokec6 =\cf7 \strokec7 "_blank"\cf4 \strokec4  rel\cf6 \strokec6 =\cf7 \strokec7 "noopener noreferrer"\cf4 \strokec4  className\cf6 \strokec6 =\cf7 \strokec7 "flex items-center justify-center p-4 bg-pink-600/80 rounded-lg text-white font-bold text-lg hover:bg-pink-500 transition-all duration-300 ease-in-out shadow-lg hover:shadow-pink-400/30 transform hover:-translate-y-1"\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3                 \cf6 \strokec6 <\cf5 \strokec5 AppleMusicIcon\cf4 \strokec4  />\cb1 \
+\cb3                 \cf5 \strokec5 Listen\cf4 \strokec4  on \cf5 \strokec5 Apple\cf4 \strokec4  \cf5 \strokec5 Music\cf4 \cb1 \strokec4 \
+\cb3               \cf6 \strokec6 </\cf4 \strokec4 a\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3             \cf6 \strokec6 </\cf4 \strokec4 div\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3           \cf6 \strokec6 </\cf4 \strokec4 section\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\
+\cb3           \cf6 \strokec6 \{\cf8 \strokec8 /* Merchandise Section */\cf6 \strokec6 \}\cf4 \cb1 \strokec4 \
+\cb3           \cf6 \strokec6 <\cf4 \strokec4 section id\cf6 \strokec6 =\cf7 \strokec7 "merch"\cf4 \strokec4  className\cf6 \strokec6 =\cf7 \strokec7 "w-full"\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3             \cf6 \strokec6 <\cf4 \strokec4 h2 className\cf6 \strokec6 =\cf7 \strokec7 "text-2xl sm:text-3xl font-bold text-center mb-6 text-cyan-300 tracking-wide"\cf6 \strokec6 >\cf5 \strokec5 The\cf4 \strokec4  \cf5 \strokec5 Supply\cf6 \strokec6 </\cf4 \strokec4 h2\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3             \cf6 \strokec6 <\cf4 \strokec4 div className\cf6 \strokec6 =\cf7 \strokec7 "grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8"\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3               \cf6 \strokec6 \{\cf4 \strokec4 merchItems\cf6 \strokec6 .\cf4 \strokec4 map\cf6 \strokec6 ((\cf4 \strokec4 item\cf6 \strokec6 ,\cf4 \strokec4  index\cf6 \strokec6 )\cf4 \strokec4  \cf6 \strokec6 =>\cf4 \strokec4  \cf6 \strokec6 (\cf4 \cb1 \strokec4 \
+\cb3                 \cf6 \strokec6 <\cf4 \strokec4 div key\cf6 \strokec6 =\{\cf4 \strokec4 index\cf6 \strokec6 \}\cf4 \strokec4  className\cf6 \strokec6 =\cf7 \strokec7 "bg-slate-900/40 rounded-2xl border border-cyan-400/20 shadow-xl overflow-hidden group transition-all duration-300 ease-in-out hover:shadow-cyan-400/20 hover:border-cyan-400/40 transform hover:-translate-y-2"\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3                   \cf6 \strokec6 <\cf4 \strokec4 img src\cf6 \strokec6 =\{\cf4 \strokec4 item\cf6 \strokec6 .\cf4 \strokec4 image\cf6 \strokec6 \}\cf4 \strokec4  alt\cf6 \strokec6 =\{\cf4 \strokec4 item\cf6 \strokec6 .\cf4 \strokec4 name\cf6 \strokec6 \}\cf4 \strokec4  className\cf6 \strokec6 =\cf7 \strokec7 "w-full h-48 sm:h-56 object-cover"\cf4 \strokec4  onError\cf6 \strokec6 =\{(\cf4 \strokec4 e\cf6 \strokec6 )\cf4 \strokec4  \cf6 \strokec6 =>\cf4 \strokec4  \cf6 \strokec6 \{\cf4 \strokec4  e\cf6 \strokec6 .\cf4 \strokec4 target\cf6 \strokec6 .\cf4 \strokec4 onerror \cf6 \strokec6 =\cf4 \strokec4  \cf2 \strokec2 null\cf6 \strokec6 ;\cf4 \strokec4  e\cf6 \strokec6 .\cf4 \strokec4 target\cf6 \strokec6 .\cf4 \strokec4 src\cf6 \strokec6 =\cf7 \strokec7 'https://placehold.co/400x400/001021/ffffff?text=Merch+Item'\cf6 \strokec6 ;\cf4 \strokec4  \cf6 \strokec6 \}\}\cf4 \strokec4 />\cb1 \
+\cb3                   \cf6 \strokec6 <\cf4 \strokec4 div className\cf6 \strokec6 =\cf7 \strokec7 "p-4"\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3                     \cf6 \strokec6 <\cf4 \strokec4 h3 className\cf6 \strokec6 =\cf7 \strokec7 "font-bold text-lg text-cyan-200"\cf6 \strokec6 >\{\cf4 \strokec4 item\cf6 \strokec6 .\cf4 \strokec4 name\cf6 \strokec6 \}</\cf4 \strokec4 h3\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3                     \cf6 \strokec6 <\cf4 \strokec4 a href\cf6 \strokec6 =\{\cf4 \strokec4 item\cf6 \strokec6 .\cf4 \strokec4 url\cf6 \strokec6 \}\cf4 \strokec4  target\cf6 \strokec6 =\cf7 \strokec7 "_blank"\cf4 \strokec4  rel\cf6 \strokec6 =\cf7 \strokec7 "noopener noreferrer"\cf4 \strokec4  className\cf6 \strokec6 =\cf7 \strokec7 "inline-block mt-3 bg-cyan-400/20 text-cyan-100 rounded-full px-4 py-2 text-sm font-semibold hover:bg-cyan-400/40 transition-colors duration-300"\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3                       \cf5 \strokec5 View\cf4 \strokec4  \cf5 \strokec5 Store\cf4 \cb1 \strokec4 \
+\cb3                     \cf6 \strokec6 </\cf4 \strokec4 a\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3                   \cf6 \strokec6 </\cf4 \strokec4 div\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3                 \cf6 \strokec6 </\cf4 \strokec4 div\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3               \cf6 \strokec6 ))\}\cf4 \cb1 \strokec4 \
+\cb3             \cf6 \strokec6 </\cf4 \strokec4 div\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3           \cf6 \strokec6 </\cf4 \strokec4 section\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\
+\cb3           \cf6 \strokec6 \{\cf8 \strokec8 /* Socials & Community Section */\cf6 \strokec6 \}\cf4 \cb1 \strokec4 \
+\cb3           \cf6 \strokec6 <\cf4 \strokec4 section id\cf6 \strokec6 =\cf7 \strokec7 "community"\cf4 \strokec4  className\cf6 \strokec6 =\cf7 \strokec7 "w-full text-center"\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3              \cf6 \strokec6 <\cf4 \strokec4 h2 className\cf6 \strokec6 =\cf7 \strokec7 "text-2xl sm:text-3xl font-bold text-center mb-6 text-cyan-300 tracking-wide"\cf6 \strokec6 >\cf5 \strokec5 The\cf4 \strokec4  \cf5 \strokec5 Network\cf6 \strokec6 </\cf4 \strokec4 h2\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3              \cf6 \strokec6 \{\cf8 \strokec8 /* Social Links */\cf6 \strokec6 \}\cf4 \cb1 \strokec4 \
+\cb3              \cf6 \strokec6 <\cf4 \strokec4 div className\cf6 \strokec6 =\cf7 \strokec7 "flex justify-center items-center gap-6 mb-8"\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3                 \cf6 \strokec6 <\cf4 \strokec4 a href\cf6 \strokec6 =\cf7 \strokec7 "https://www.tiktok.com/@misterscanmusic"\cf4 \strokec4  target\cf6 \strokec6 =\cf7 \strokec7 "_blank"\cf4 \strokec4  rel\cf6 \strokec6 =\cf7 \strokec7 "noopener noreferrer"\cf4 \strokec4  className\cf6 \strokec6 =\cf7 \strokec7 "text-cyan-300 hover:text-white transition-colors duration-300 transform hover:scale-110"\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3                     \cf6 \strokec6 <\cf5 \strokec5 TikTokIcon\cf4 \strokec4 />\cb1 \
+\cb3                 \cf6 \strokec6 </\cf4 \strokec4 a\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3                  \cf6 \strokec6 <\cf4 \strokec4 a href\cf6 \strokec6 =\cf7 \strokec7 "https://www.youtube.com/@misterscanmusic"\cf4 \strokec4  target\cf6 \strokec6 =\cf7 \strokec7 "_blank"\cf4 \strokec4  rel\cf6 \strokec6 =\cf7 \strokec7 "noopener noreferrer"\cf4 \strokec4  className\cf6 \strokec6 =\cf7 \strokec7 "text-cyan-300 hover:text-white transition-colors duration-300 transform hover:scale-110"\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3                     \cf6 \strokec6 <\cf5 \strokec5 YouTubeIcon\cf4 \strokec4  />\cb1 \
+\cb3                 \cf6 \strokec6 </\cf4 \strokec4 a\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3              \cf6 \strokec6 </\cf4 \strokec4 div\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3              \cb1 \
+\cb3              \cf6 \strokec6 <\cf4 \strokec4 a href\cf6 \strokec6 =\cf7 \strokec7 "https://discord.gg/QP62HeTE"\cf4 \strokec4  target\cf6 \strokec6 =\cf7 \strokec7 "_blank"\cf4 \strokec4  rel\cf6 \strokec6 =\cf7 \strokec7 "noopener noreferrer"\cf4 \strokec4  className\cf6 \strokec6 =\cf7 \strokec7 "inline-flex items-center justify-center px-8 py-4 bg-indigo-600/80 rounded-lg text-white font-bold text-lg hover:bg-indigo-500 transition-all duration-300 ease-in-out shadow-lg hover:shadow-indigo-400/30 transform hover:-translate-y-1"\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3               \cf6 \strokec6 <\cf5 \strokec5 DiscordIcon\cf4 \strokec4  />\cb1 \
+\cb3               \cf5 \strokec5 Join\cf4 \strokec4  the \cf5 \strokec5 Community\cf4 \strokec4  \cf5 \strokec5 Chatroom\cf4 \cb1 \strokec4 \
+\cb3             \cf6 \strokec6 </\cf4 \strokec4 a\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3           \cf6 \strokec6 </\cf4 \strokec4 section\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3           \cb1 \
+\cb3           \cf6 \strokec6 <\cf4 \strokec4 footer className\cf6 \strokec6 =\cf7 \strokec7 "text-center text-cyan-200/50 py-8 text-sm"\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3             \cf6 \strokec6 <\cf4 \strokec4 p\cf6 \strokec6 >\cf10 \strokec10 \'a9\cf4 \strokec4  \cf6 \strokec6 \{\cf2 \strokec2 new\cf4 \strokec4  \cf5 \strokec5 Date\cf6 \strokec6 ().\cf4 \strokec4 getFullYear\cf6 \strokec6 ()\}\cf4 \strokec4  \cf5 \strokec5 Misterscan\cf4 \strokec4  \cf5 \strokec5 Network\cf6 \strokec6 .\cf4 \strokec4  \cf5 \strokec5 All\cf4 \strokec4  signals reserved\cf6 \strokec6 .</\cf4 \strokec4 p\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3           \cf6 \strokec6 </\cf4 \strokec4 footer\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3         \cf6 \strokec6 </\cf4 \strokec4 main\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3       \cf6 \strokec6 </\cf4 \strokec4 div\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 </\cf4 \strokec4 div\cf6 \strokec6 >\cf4 \cb1 \strokec4 \
+\cb3   \cf6 \strokec6 );\cf4 \cb1 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb3 \strokec6 \}\cf4 \cb1 \strokec4 \
+\
+}
